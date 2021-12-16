@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="./stylesheet.css">
+    <title>Módulo 4 - Día 5 - Reto 1</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <form class="well form-horizontal" id="professional_form">
+            <fieldset>
+
+                <legend>
+                    <center>
+                        <h1><b>Profesionales</b></h1>
+                    </center>
+                </legend><br>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">id&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+                    <input type="text" name="id" id="id" class="form-control" placeholder="Id" aria-label="Id" aria-describedby="basic-addon1">
+                </div>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Nombre&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+                    <input type="text" name="name" id="name" class="form-control" placeholder="Nombre" aria-label="Nombre" aria-describedby="basic-addon1">
+                </div>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Edad&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+                    <input type="text" name="age" id="age" class="form-control" placeholder="Edad" aria-label="Edad" aria-describedby="basic-addon1">
+                </div>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Género&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+                    <input type="text" name="genre" id="genre" class="form-control" placeholder="Género" aria-label="Género" aria-describedby="basic-addon1">
+                </div>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Peso&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+                    <input type="text" name="weight" id="weight" class="form-control" placeholder="Peso" aria-label="Peso" aria-describedby="basic-addon1">
+                </div>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Altura&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+                    <input type="text" name="height" id="height" class="form-control" placeholder="Altura" aria-label="Altura" aria-describedby="basic-addon1">
+                </div>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Color de pelo</span>
+                    <input type="text" name="hairColor" id="hairColor" class="form-control" placeholder="Color de pelo" aria-label="Color de pelo" aria-describedby="basic-addon1">
+                </div>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Color de ojos</span>
+                    <input type="text" name="eyeColor" id="eyeColor" class="form-control" placeholder="Color de ojos" aria-label="Color de ojos" aria-describedby="basic-addon1">
+                </div>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Estudios&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+                    <input type="text" name="race" id="race" class="form-control" placeholder="Estudios" aria-label="Estudios" aria-describedby="basic-addon1">
+                </div>
+
+                <div class="form-check">
+                    <label class="form-check-label" for="isRetired">Está retirado</label>
+                    <input class="form-check-input" type="checkbox" value="" id="isRetired">
+                </div>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Nacionalidad</span>
+                    <input type="text" name="nationality" id="nationality" class="form-control" placeholder="Nacionalidad" aria-label="Nacionalidad" aria-describedby="basic-addon1">
+                </div>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Nº de Oscar&nbsp&nbsp</span>
+                    <input type="text" name="oscarsNumbers" id="oscarsNumbers" class="form-control" placeholder="Nº de Oscar" aria-label="Nº de Oscar" aria-describedby="basic-addon1">
+                </div>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Profesión&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+                    <input type="text" name="profession" id="profession" class="form-control" placeholder="Profesión" aria-label="Profesión" aria-describedby="basic-addon1">
+                </div>
+
+                <!-- Button -->
+                <div class="btn-group d-flex justify-content-center">
+                   <button type="button" class="btn btn-primary" onclick="getUser()">Mostrar</button>
+                   <button type="button" class="btn btn-success" onclick="postUser()">Crear</button>
+                   <button type="button" class="btn btn-warning" onclick="putUser()">Actualizar</button>
+                   <button type="button" class="btn btn-danger" onclick="delUser()">Eliminar</button>
+                </div>
+            </fieldset>
+        </form>
+        <div>&nbsp</div>
+        <table class="table table-sm d-none" id="table-professionals">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Edad</th>
+                    <th scope="col">Género</th>
+                    <th scope="col">Altura</th>
+                    <th scope="col">Peso</th>
+                    <th scope="col">Pelo</th>
+                    <th scope="col">Ojos</th>
+                    <th scope="col">Estudios</th>
+                    <th scope="col">Retirado</th>
+                    <th scope="col">Nacionalidad</th>
+                    <th scope="col">Oscars</th>
+                    <th scope="col">Profesión</th>
+                </tr>
+              </thead>
+              <tbody id="table-body">
+              </tbody>
+        </table>
+    </div>
+    </div><!-- /.container -->
+    <script src="./fecth.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
